@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Mim - Meu Site Pessoal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/css/flag-icon.min.css">
+</head>
+<body>
+    <nav class="navbar"></nav>
+
+    <section id="about" class="container">
+        <h2 class="section-title">Sobre Mim</h2>
+        <p>Aqui você pode escrever uma biografia detalhada sobre você.</p>
+        <div class="portfolio-links">
+            <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github icon"></i>GitHub</a>
+            <a href="https://www.linkedin.com/in/yourusername/" target="_blank"><i class="fab fa-linkedin icon"></i>LinkedIn</a>
+            <a href="https://www.yourcurriculumlatteslink.com" target="_blank"><i class="fas fa-file-alt icon"></i>Curriculum Lattes</a>
+            <a href="https://www.yourportfoliolink.com" target="_blank"><i class="fas fa-briefcase icon"></i>Portfólio</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Meu Site Pessoal. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function loadNavbar() {
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.querySelector('.navbar').innerHTML = data;
+                    googleTranslateElementInit();
+                });
+        }
+
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'pt',
+                includedLanguages: 'en,es,fr,de,zh-CN,ar,ko,ru,it', // Add more languages as needed
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+
+        function translatePage(languageCode) {
+            var combo = document.querySelector('.goog-te-combo');
+            if (combo) {
+                combo.value = languageCode;
+                combo.dispatchEvent(new Event('change'));
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            loadNavbar();
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+            document.body.appendChild(script);
+        });
+    </script>
+</body>
+</html>
