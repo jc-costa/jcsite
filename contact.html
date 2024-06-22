@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contate-me - Meu Site Pessoal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/css/flag-icon.min.css">
+</head>
+<body>
+    <nav class="navbar"></nav>
+
+    <section id="contact" class="container">
+        <h2 class="section-title">Contate-me</h2>
+        <p>Se você deseja entrar em contato, por favor preencha o formulário abaixo.</p>
+        <form action="mailto:jeffersoncosta@duck.com" method="post" enctype="text/plain">
+            <label for="name">Nome:</label><br>
+            <input type="text" id="name" name="name"><br><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email"><br><br>
+            <label for="message">Mensagem:</label><br>
+            <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
+            <input type="submit" value="Enviar">
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Meu Site Pessoal. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function loadNavbar() {
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.querySelector('.navbar').innerHTML = data;
+                    googleTranslateElementInit();
+                });
+        }
+
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'pt',
+                includedLanguages: 'en,es,fr,de,zh-CN,ar,ko,ru,it', // Add more languages as needed
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+
+        function translatePage(languageCode) {
+            var combo = document.querySelector('.goog-te-combo');
+            if (combo) {
+                combo.value = languageCode;
+                combo.dispatchEvent(new Event('change'));
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            loadNavbar();
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+            document.body.appendChild(script);
+        });
+    </script>
+</body>
+</html>
