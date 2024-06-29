@@ -119,14 +119,14 @@ footer {
 
 .construction-warning {
     font-size: 1.5em;
-    color: #d9534f; /* Cor de destaque */
+    color: #d9534f;
     font-weight: bold;
     margin: 20px 0;
 }
 
 .construction-icon {
     font-size: 3em;
-    color: #d9534f; /* Cor de destaque */
+    color: #d9534f;
     display: block;
     margin: 10px auto;
 }
