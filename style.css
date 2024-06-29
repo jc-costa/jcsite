@@ -116,3 +116,17 @@ footer {
     color: #f0f0f0;
     margin-top: auto;
 }
+
+.construction-warning {
+    font-size: 1.5em;
+    color: #d9534f; /* Cor de destaque */
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.construction-icon {
+    font-size: 3em;
+    color: #d9534f; /* Cor de destaque */
+    display: block;
+    margin: 10px auto;
+}
